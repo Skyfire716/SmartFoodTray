@@ -7,15 +7,22 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="BottomHorizontalLayout"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="topHorizontalLayout"/>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <resources/>
  <connections/>

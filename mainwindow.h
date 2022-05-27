@@ -2,6 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QHBoxLayout>
+#include <QtCharts/QChartView>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+
+QT_CHARTS_USE_NAMESPACE
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,6 +20,16 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QHBoxLayout* topLayout;
+    QHBoxLayout* bottomLayout;
+    QChart *pillChart;
+    QChart *glassChart;
+    QChart *leftPlateChart;
+    QChart *rightPlateChart;
+    QChartView *pillChartView;
+    QChartView *glassChartView;
+    QChartView *plateLeftChartView;
+    QChartView *plateRightChartView;
 
 private:
     Ui::MainWindow *ui;
