@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QPieSeries *series2 = new QPieSeries();
     series2->append("Edda", 2);
-    series2->append("Jonni", 5);
+    series2->append("Jonas", 5);
 
     QPieSlice *slice = series->slices().at(1);
     slice->setExploded();
@@ -31,32 +31,35 @@ MainWindow::MainWindow(QWidget *parent)
     slice->setBrush(Qt::green);
 
     QChart *chart = new QChart();
-    chart->addSeries(series);
+    //chart->addSeries(series);
     chart->setTitle("Simple piechart example");
     chart->legend()->hide();
 
     QChart *chart2 = new QChart();
-    chart2->addSeries(series2);
+    //chart2->addSeries(series2);
     chart2->setTitle("SecondChart");
     chart2->legend()->hide();
 
     pillChart = new QChart();
+    pillChart->addSeries(series);
     pillChart->setTitle("PillPlate");
+    pillChart->legend()->hide();
     glassChart = new QChart();
     glassChart->setTitle("GlassPlate");
     leftPlateChart = new QChart();
+    leftPlateChart->addSeries(series2);
     leftPlateChart->setTitle("LeftPlate");
     rightPlateChart = new QChart();
     rightPlateChart->setTitle("RightPlate");
 
 
-    pillChartView = new QChartView();
+    pillChartView = new QChartView(pillChart);
     pillChartView->setRenderHint(QPainter::Antialiasing);
-    glassChartView = new QChartView();
+    glassChartView = new QChartView(glassChart);
     glassChartView->setRenderHint(QPainter::Antialiasing);
-    plateLeftChartView = new QChartView();
+    plateLeftChartView = new QChartView(leftPlateChart);
     plateLeftChartView->setRenderHint(QPainter::Antialiasing);
-    plateRightChartView = new QChartView();
+    plateRightChartView = new QChartView(rightPlateChart);
     plateRightChartView->setRenderHint(QPainter::Antialiasing);
 
     topLayout = ui->topHorizontalLayout;
